@@ -164,6 +164,7 @@ public class Configurator {
         final Object value = MANNY_CONFIGS.get(key);
         if (value == null) {
             throw new NullPointerException(key.toString() + " IS NULL");
+
         }
         return (T) MANNY_CONFIGS.get(key);
 
