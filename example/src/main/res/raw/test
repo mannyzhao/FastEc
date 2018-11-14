@@ -1,4 +1,21 @@
 {
 
-  "key":"value"
+ "code":0,
+  "message":"OK",
+  "total":1,
+  "page_size":1,
+  "data":[
+
+    {
+      "goodsId":0,
+      "spanSize":4,
+      "banners":[
+        "http://imgsrc.baidu.com/baike/pic/item/342ac65c10385343e23cf54c9113b07ecb8088ef.jpg",
+        "http://imgsrc.baidu.com/baike/pic/item/342ac65c10385343e23cf54c9113b07ecb8088ef.jpg",
+        "http://imgsrc.baidu.com/baike/pic/item/342ac65c10385343e23cf54c9113b07ecb8088ef.jpg",
+        "http://imgsrc.baidu.com/baike/pic/item/342ac65c10385343e23cf54c9113b07ecb8088ef.jpg"
+      ]
+    }
+
+  ]
 }

@@ -61,6 +61,9 @@ dependencies {
     //微信依赖包含统计
     api 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
     //RecyclerView 依赖
-    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.22'
+    // Glide 依赖
+    api 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
 
 }
