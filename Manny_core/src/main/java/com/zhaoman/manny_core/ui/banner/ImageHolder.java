@@ -3,6 +3,7 @@ package com.zhaoman.manny_core.ui.banner;
 import android.content.Context;
 import android.support.v7.widget.AppCompatImageView;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.bigkoo.convenientbanner.holder.Holder;
 import com.bumptech.glide.Glide;
@@ -19,6 +20,7 @@ public class ImageHolder implements Holder<String> {
     @Override
     public View createView(Context context) {
         mImageView=new AppCompatImageView(context);
+        mImageView.setScaleType(ImageView.ScaleType.FIT_XY);
         return mImageView;
     }
 
