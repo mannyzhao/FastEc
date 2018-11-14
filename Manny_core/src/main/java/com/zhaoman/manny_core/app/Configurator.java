@@ -2,6 +2,7 @@ package com.zhaoman.manny_core.app;
 
 
 import android.app.Activity;
+import android.os.Handler;
 
 import com.joanzapata.iconify.IconFontDescriptor;
 import com.joanzapata.iconify.Iconify;
@@ -24,9 +25,12 @@ public class Configurator {
     //网络拦截器
     private static final ArrayList<Interceptor>  INTERCEPTORS=new ArrayList<>();
 
+    private static final Handler HANDLER = new Handler();
+
     private Configurator(){
         //刚开始进行初始化的时候  必定是没有完成的 所以传入false
         MANNY_CONFIGS.put(ConfigType.CONFIG_READY,false);
+        MANNY_CONFIGS.put(ConfigType.HANDLER, HANDLER);
     }
 
 
