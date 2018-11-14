@@ -1,0 +1,1 @@
+include ':example', ':Manny_annotations', ':Manny_compiler', ':Manny_core', ':Manny_Ec'
