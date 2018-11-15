@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.widget.Toast;
 
+import com.jaeger.library.StatusBarUtil;
 import com.zhaoman.manny_core.activities.ProxyActivity;
 import com.zhaoman.manny_core.app.Manny;
 import com.zhaoman.manny_core.delegates.MannyDelegate;
@@ -28,11 +29,12 @@ public class MainActivity extends ProxyActivity  implements ISignListener,ILaunc
 
         Manny.getConfigurator().withActivity(this);
 
+
     }
 
     @Override
     public MannyDelegate setRootDelegate() {
-        return new LanucherDelegate();
+        return new EcBottomDelegate();
     }
 
     @Override

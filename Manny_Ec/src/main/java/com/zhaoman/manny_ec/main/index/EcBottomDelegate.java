@@ -4,7 +4,7 @@ import com.zhaoman.manny_core.delegates.bottom.BaseBottomDelegate;
 import com.zhaoman.manny_core.delegates.bottom.BottomItemDelagate;
 import com.zhaoman.manny_core.delegates.bottom.BottomTabBean;
 import com.zhaoman.manny_core.delegates.bottom.ItemBuilder;
-import com.zhaoman.manny_ec.main.sort.SortDelegate;
+import com.zhaoman.manny_ec.main.sort.index.SortDelegate;
 
 import java.util.LinkedHashMap;
 

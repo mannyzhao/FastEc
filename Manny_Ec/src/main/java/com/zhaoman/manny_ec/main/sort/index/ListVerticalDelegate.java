@@ -1,21 +1,21 @@
-package com.zhaoman.manny_ec.main.sort;
+package com.zhaoman.manny_ec.main.sort.index;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
-import com.zhaoman.manny_core.delegates.bottom.BottomItemDelagate;
+import com.zhaoman.manny_core.delegates.MannyDelegate;
 import com.zhaoman.manny_ec.R;
 
 /**
  * Author:zhaoman
- * Date:2018/11/13
+ * Date:2018/11/15
  * Description:
  */
-public class SortDelegate extends BottomItemDelagate {
+public class ListVerticalDelegate extends MannyDelegate {
     @Override
     public Object setLayout() {
-        return R.layout.delegate_sort;
+        return R.layout.delegate_list_vertical;
     }
 
     @Override
