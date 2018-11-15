@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.joanzapata.iconify.widget.IconTextView;
+import com.zhaoman.manny_core.delegates.MannyDelegate;
 import com.zhaoman.manny_core.delegates.bottom.BottomItemDelagate;
 import com.zhaoman.manny_core.ui.recycler.BaseDecoration;
 import com.zhaoman.manny_core.ui.refresh.RefreshHandler;
@@ -61,6 +62,9 @@ public class IndexDelegate extends BottomItemDelagate{
         final GridLayoutManager manager = new GridLayoutManager(getContext(), 4);
         mRecyclerView.setLayoutManager(manager);
         mRecyclerView.addItemDecoration(BaseDecoration.create(ContextCompat.getColor(getContext(),R.color.colorAccent),5));
+
+        final EcBottomDelegate ecBottomDelegate = getParentDelegate();
+        mRecyclerView.addOnItemTouchListener(IndexItemClickListener.create(ecBottomDelegate));
 
     }
 
