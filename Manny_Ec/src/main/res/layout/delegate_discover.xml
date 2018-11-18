@@ -7,14 +7,16 @@
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
         android:background="@color/colorAccent"
-        android:layout_height="60dp"/>
-    <android.support.v7.widget.AppCompatTextView
-        android:text="发现"
-        android:textColor="@android:color/white"
-        android:paddingTop="6dp"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="60dp">
+        <android.support.v7.widget.AppCompatTextView
+            android:text="分类"
+            android:textColor="@android:color/white"
+            android:paddingTop="6dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </android.support.v7.widget.Toolbar>
 
     <FrameLayout
         android:id="@+id/web_container"

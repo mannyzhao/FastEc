@@ -6,6 +6,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.NavUtils;
 import android.webkit.WebView;
 
+import com.zhaoman.manny_core.app.ConfigType;
+import com.zhaoman.manny_core.app.Manny;
 import com.zhaoman.manny_core.delegates.MannyDelegate;
 import com.zhaoman.manny_core.delegates.web.route.RouteKeys;
 
@@ -17,18 +19,20 @@ import java.lang.ref.WeakReference;
  * Date:2018/11/15
  * Description:
  */
-public abstract class WebDelagate extends MannyDelegate {
+public abstract class WebDelagate extends MannyDelegate implements IWebViewInitializer{
 
     private WebView mWebView=null;
 
     private final ReferenceQueue<WebView> WEB_VIEW_QUENE=new ReferenceQueue<>();
 
     private String mUrl=null;
-
+    //保证webview可用
     private boolean mIsWebViewAvailable=false;
+    private MannyDelegate mTopDelegate=null;
 
 
     public WebDelagate(){
+
 
     }
 
@@ -42,7 +46,7 @@ public abstract class WebDelagate extends MannyDelegate {
 
         final Bundle arguments = getArguments();
         mUrl = arguments.getString(RouteKeys.URL.name());
-
+        initWebView();
     }
 
     @Override
@@ -88,6 +92,10 @@ public abstract class WebDelagate extends MannyDelegate {
         }
     }
 
+
+    /**
+     * 初始化webview
+     */
     @SuppressLint("JavascriptInterface")
     private void initWebView(){
         if (mWebView!=null){
@@ -103,7 +111,8 @@ public abstract class WebDelagate extends MannyDelegate {
                 mWebView= initializer.initWebView(mWebView);
                 mWebView.setWebViewClient(initializer.initWebViewClient());
                 mWebView.setWebChromeClient(initializer.initWebChromeClient());
-                mWebView.addJavascriptInterface(MannyWebInterface.create(this),"manny");
+                final String name=Manny.getConfiguration(ConfigType.JAVASCRIPT_INTERFACE);
+                mWebView.addJavascriptInterface(MannyWebInterface.create(this),name);
                 mIsWebViewAvailable=true;
 
             }else{
@@ -111,5 +120,20 @@ public abstract class WebDelagate extends MannyDelegate {
                 throw new NullPointerException("Initializer is null!");
             }
         }
+    }
+
+
+    public void setTopDelegate(MannyDelegate delegate){
+
+        mTopDelegate=delegate;
+    }
+
+    public MannyDelegate getTopDelegate(){
+        if (mTopDelegate==null){
+
+            mTopDelegate=this;
+        }
+
+        return mTopDelegate;
     }
 }

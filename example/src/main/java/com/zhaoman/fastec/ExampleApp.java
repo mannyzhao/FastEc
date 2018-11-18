@@ -22,6 +22,7 @@ public class ExampleApp  extends Application {
                 .withInterceptor(new DebugInterceptor("index",R.raw.test))
                 .withWeChatAppId("")
                 .withWeChatAppSecret("")
+                .withJavascriptInterface("manny")
                 .configure();
         //初始化数据库
         DatabaseManager.getInstance().init(this);

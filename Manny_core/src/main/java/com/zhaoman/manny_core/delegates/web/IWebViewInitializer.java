@@ -7,7 +7,7 @@ import android.webkit.WebViewClient;
 /**
  * Author:zhaoman
  * Date:2018/11/15
- * Description:
+ * Description:WebView 初始化接口
  */
 public interface IWebViewInitializer {
 
