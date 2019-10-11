@@ -6,6 +6,7 @@ import android.app.Application;
 import com.joanzapata.iconify.fonts.FontAwesomeModule;
 import com.zhaoman.manny_core.app.Manny;
 
+import com.zhaoman.manny_core.delegates.web.event.TestEvent;
 import com.zhaoman.manny_core.net.interceptors.DebugInterceptor;
 import com.zhaoman.manny_ec.database.DatabaseManager;
 import com.zhaoman.manny_ec.icon.FontEcModule;
@@ -23,6 +24,7 @@ public class ExampleApp  extends Application {
                 .withWeChatAppId("")
                 .withWeChatAppSecret("")
                 .withJavascriptInterface("manny")
+                .withWebEvent("test",new TestEvent())
                 .configure();
         //初始化数据库
         DatabaseManager.getInstance().init(this);

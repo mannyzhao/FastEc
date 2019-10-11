@@ -4,16 +4,16 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.widget.Toast;
 
-import com.jaeger.library.StatusBarUtil;
 import com.zhaoman.manny_core.activities.ProxyActivity;
 import com.zhaoman.manny_core.app.Manny;
 import com.zhaoman.manny_core.delegates.MannyDelegate;
 import com.zhaoman.manny_core.ui.launcher.ILauncherListener;
 import com.zhaoman.manny_core.ui.launcher.OnLauncherFinishTag;
-import com.zhaoman.manny_ec.lanucher.LanucherDelegate;
 import com.zhaoman.manny_ec.main.index.EcBottomDelegate;
 import com.zhaoman.manny_ec.sign.ISignListener;
 import com.zhaoman.manny_ec.sign.SignInDelegate;
+
+import qiu.niorgai.StatusBarCompat;
 
 
 public class MainActivity extends ProxyActivity  implements ISignListener,ILauncherListener {
@@ -28,6 +28,8 @@ public class MainActivity extends ProxyActivity  implements ISignListener,ILaunc
         }
 
         Manny.getConfigurator().withActivity(this);
+
+        StatusBarCompat.translucentStatusBar(this,true);
 
 
     }

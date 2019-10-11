@@ -79,6 +79,7 @@ public class MultipleRecyclerAdapter extends
                 imageUrl=entity.getField(MultipleFields.IMAGE_URL);
                 Glide.with(mContext)
                         .load(imageUrl)
+
                         .into((ImageView) holder.getView(R.id.img_single));
 
 

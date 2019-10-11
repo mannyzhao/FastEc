@@ -16,7 +16,7 @@ public class MannyWebInterface  {
 
     private final WebDelagate DELEGATE;
 
-    public MannyWebInterface(WebDelagate delagate) {
+    private MannyWebInterface(WebDelagate delagate) {
         this.DELEGATE = delagate;
     }
 
@@ -27,9 +27,6 @@ public class MannyWebInterface  {
     @JavascriptInterface
     public String  event(String params){
         final String action=JSON.parseObject(params).getString("action");
-
-
-
         final Event event = EventManager.getInstance().createEvent(action);
         if (event!=null){
 

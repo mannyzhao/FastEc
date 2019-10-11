@@ -31,5 +31,7 @@ public class SortDelegate extends BottomItemDelagate {
         loadRootFragment(R.id.vertical_list_container,listVerticalDelegate);
       loadRootFragment(R.id.sort_content_container,ContentDelegate.newInstance(1),false,true);
 
+
+
     }
 }
